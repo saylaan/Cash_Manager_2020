@@ -5,7 +5,9 @@ import java.util.*
 
 class User_Data : Application() {
 
-    var datas = TreeMap<String, String>()
+    lateinit var datas: TreeMap<String, String>
+    lateinit var actualUseremail: String
+    lateinit var actualUserpassword: String
 
     override fun onCreate() {
         super.onCreate()
@@ -13,14 +15,34 @@ class User_Data : Application() {
     }
 
     fun setNewData(email: String, password: String){
-        datas[email] = password
+        if(email in datas){
+        }
+        else {
+            datas[email] = password
+        }
     }
 
-    fun verifyLog(email: String, password: String): Boolean? {
+    fun verifyLog(email: String, password: String): Boolean {
         if(email in datas){
-            return datas[email]==password
+            return this.datas[email]==password
         }
         return false
+    }
+
+    fun setemail(email: String){
+        this.actualUseremail = email
+    }
+
+    fun getemail(): String {
+        return this.actualUseremail
+    }
+
+    fun setpassword(password: String) {
+        this.actualUserpassword = password
+    }
+
+    fun getpassword(): String {
+        return this.actualUserpassword
     }
 
     companion object {

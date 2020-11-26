@@ -7,4 +7,7 @@
     <string name="password">Password</string>
     <string name="action_sign_in">Register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="payement_card">Payement en carte</string>
+    <string name="payement_cheque">Payement en cheque</string>
+    <string name="prix_total">Prix total en € :</string>
 </resources>

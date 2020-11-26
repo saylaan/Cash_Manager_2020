@@ -1,5 +1,7 @@
 package com.cash_manager_app.ui
 
+import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,8 +10,8 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.cash_manager_app.MainActivity
 import com.cash_manager_app.R
+import com.cash_manager_app.utils.UserConstants
 import com.cash_manager_app.utils.User_Data
-import com.google.android.material.textfield.TextInputLayout
 
 class Login : AppCompatActivity() {
 
@@ -27,7 +29,10 @@ class Login : AppCompatActivity() {
         val clickListenerRegister = View.OnClickListener {
             // Register
 
-            User_Data.instance?.setNewData(txtUsername.toString(),txtPassword.toString())
+            User_Data.instance?.setNewData(txtUsername.text.toString(),txtPassword.text.toString())
+
+            User_Data.instance?.setemail(txtUsername.text.toString())
+            User_Data.instance?.setpassword(txtPassword.text.toString())
 
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
@@ -37,12 +42,26 @@ class Login : AppCompatActivity() {
             // Sign in
             //User_Data.instance?.setNewData(txtUsername.toString(),txtPassword.toString())
 
-            if(User_Data.instance?.verifyLog(txtUsername.toString(),txtPassword.toString())!!){
+            /*if(User_Data.instance?.verifyLog(txtUsername.toString(),txtPassword.toString())==true){
                 val intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(intent)
             }
             else{//dialog
+            }*/
+
+            if((txtUsername.text.toString() == UserConstants().USEREMAIL)&&(txtPassword.text.toString() == UserConstants().USERPASSWORD)){
+                User_Data.instance?.setemail(txtUsername.text.toString())
+                User_Data.instance?.setpassword(txtPassword.text.toString())
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+            }else{
+                /*if(!Login.isFinishing())
+                val mAlertDialog = AlertDialog.Builder(applicationContext)
+                mAlertDialog.setMessage("Mauvais identifiants")
+                mAlertDialog.show()
+                */
             }
+
         }
 
         signin.setOnClickListener(clickListenerSignin)

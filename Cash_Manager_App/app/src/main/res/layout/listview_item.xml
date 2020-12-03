@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="30dp"
+            android:layout_toStartOf="@id/ajouter"/>
+
+        <Button
+            android:id="@+id/ajouter"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:layout_toStartOf="@id/article_count">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/article_count"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:padding="15dp"
+            android:layout_toStartOf="@id/supprimer">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/supprimer"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_alignParentEnd="true">
+
+        </Button>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -35,10 +35,5 @@
             android:label="@string/title_upload"
             tools:layout="@layout/fragment_upload" />
 
-    <fragment
-        android:id="@+id/navigation_favorite"
-        android:name="com.epicture.app.ui.favorite.FavoriteFragment"
-        android:label="@string/title_upload"
-        tools:layout="@layout/fragment_upload" />
 
 </navigation>

@@ -33,19 +33,16 @@ class HomeFragment : Fragment() {
         /*homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })*/
-        var viewArticles: RecyclerView = root.findViewById(R.id.listeArticles)
+        val viewArticles: RecyclerView = root.findViewById(R.id.listeArticles)
 
-        //var listeArticlesKeys = App_Data.instance!!.getlisteArticlesKeys()
-        //var listeArticlesValues = App_Data.instance!!.getlisteArticlesValues()
-        var listeArticles = App_Data.instance?.getlisteArticlesToListView()
 
-        var dataAdapter = ArticlesAdapter(listeArticles)
+        viewArticles.layoutManager = LinearLayoutManager(this.requireContext())
+        val dataAdapter = ArticlesAdapter()
         viewArticles.adapter = dataAdapter
-        viewArticles.layoutManager = LinearLayoutManager(this.requireActivity())
 
-
-
-
+        val data = App_Data.createListeArticle()
+        //App_Data.instance.sizeListe(data.size)
+        dataAdapter.submitList(data)
 
 
         return root

@@ -11,15 +11,15 @@ class User_Data : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        instance = this
+        //instance = this
     }
 
-    fun setNewData(email: String, password: String){
-        if(email in datas){
-        }
-        else {
-            datas[email] = password
-        }
+    fun isAlreadyExist(email: String, password: String) : Boolean {
+        return email in datas
+    }
+
+    fun setNewData(email: String, password: String) {
+        datas[email] = password
     }
 
     fun verifyLog(email: String, password: String): Boolean {
@@ -46,7 +46,7 @@ class User_Data : Application() {
     }
 
     companion object {
-        var instance: User_Data? = null
+        var instance: User_Data = User_Data()
             private set
     }
 

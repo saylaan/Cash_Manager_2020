@@ -29,39 +29,35 @@ class Login : AppCompatActivity() {
         val clickListenerRegister = View.OnClickListener {
             // Register
 
-            User_Data.instance?.setNewData(txtUsername.text.toString(),txtPassword.text.toString())
+            if (User_Data.instance.isAlreadyExist(txtUsername.text.toString(),txtPassword.text.toString())){
 
-            User_Data.instance?.setemail(txtUsername.text.toString())
-            User_Data.instance?.setpassword(txtPassword.text.toString())
+                User_Data.instance.setNewData(txtUsername.text.toString(),txtPassword.text.toString())
+                User_Data.instance.setemail(txtUsername.text.toString())
+                User_Data.instance.setpassword(txtPassword.text.toString())
 
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+            }else{
+                val mAlertDialog = AlertDialog.Builder(applicationContext)
+                mAlertDialog.setMessage("Mauvais identifiants")
+                mAlertDialog.show()
+            }
         }
 
         val clickListenerSignin = View.OnClickListener {
             // Sign in
-            //User_Data.instance?.setNewData(txtUsername.toString(),txtPassword.toString())
-
-            /*if(User_Data.instance?.verifyLog(txtUsername.toString(),txtPassword.toString())==true){
-                val intent = Intent(applicationContext, MainActivity::class.java)
-                startActivity(intent)
-            }
-            else{//dialog
-            }*/
 
             if((txtUsername.text.toString() == UserConstants().USEREMAIL)&&(txtPassword.text.toString() == UserConstants().USERPASSWORD)){
-                User_Data.instance?.setemail(txtUsername.text.toString())
-                User_Data.instance?.setpassword(txtPassword.text.toString())
+                User_Data.instance.setemail(txtUsername.text.toString())
+                User_Data.instance.setpassword(txtPassword.text.toString())
                 val intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(intent)
             }else{
-                /*if(!Login.isFinishing())
-                val mAlertDialog = AlertDialog.Builder(applicationContext)
+                /*val mAlertDialog = AlertDialog.Builder(applicationContext)
                 mAlertDialog.setMessage("Mauvais identifiants")
                 mAlertDialog.show()
                 */
             }
-
         }
 
         signin.setOnClickListener(clickListenerSignin)

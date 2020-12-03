@@ -13,46 +13,63 @@ import com.cash_manager_app.utils.App_Data
 import com.cash_manager_app.utils.Article
 import com.cash_manager_app.utils.User_Data
 
-class ArticlesAdapter (private val listeArticles : List<Article>?)
-    : RecyclerView.Adapter<ArticlesAdapter.ViewHolder>() {
+class ArticlesAdapter
+    : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val article: TextView = itemView.findViewById(R.id.article)
+    private var listeArticles: List<Article> = ArrayList()
+
+    class ArticleViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val name: TextView = itemView.findViewById(R.id.article)
         val prix: TextView = itemView.findViewById(R.id.price)
+        val article_count: TextView = itemView.findViewById(R.id.article_count)
         val ajouter: Button = itemView.findViewById(R.id.ajouter)
+        var supprimer: Button = itemView.findViewById((R.id.supprimer))
+
+        fun bind(article: Article, position: Int){
+            name.text = article.article
+            prix.text = article.prix.toString()
+            article_count.text = App_Data.instance.getCount(position).toString()
+            val clickListenerAjouter = View.OnClickListener {
+                //Ajouter un article et ajouter son prix au prix total
+                App_Data.instance.addTotalPrice(article.prix)
+                App_Data.instance.addCount(position)
+                article_count.text = App_Data.instance.getCount(position).toString()
+            }
+            val clickListenerSupprimer = View.OnClickListener {
+                //Supprimer un article et soustraire son prix au prix total
+                if(App_Data.instance.getCount(position) > 0){
+                    App_Data.instance.minusTotalPrice(article.prix)
+                    App_Data.instance.minusCount(position)
+                    article_count.text = App_Data.instance.getCount(position).toString()
+                }
+            }
+            ajouter.setOnClickListener(clickListenerAjouter)
+            supprimer.setOnClickListener(clickListenerSupprimer)
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    fun submitList(liste: List<Article>){
+        listeArticles = liste
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.listview_item, parent, false)
 
-        return ViewHolder(itemView)
+        return ArticleViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentArticle = listeArticles?.get(position)
-
-        if (currentArticle != null) {
-            holder.article.text = currentArticle.article
-            holder.prix.text = currentArticle.prix
-        }
-
-
-        val clickListenerAjouter = View.OnClickListener {
-            // Ajouter le prix de l'article au prix total
-
-            if (currentArticle != null) {
-                App_Data.instance?.addTotalPrice(currentArticle.prix.toInt())
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when(holder){
+            is ArticleViewHolder ->{
+                val currentArticle = listeArticles.get(position)
+                holder.bind(currentArticle, position)
             }
-
         }
-        holder.ajouter.setOnClickListener(clickListenerAjouter)
+
     }
 
     override fun getItemCount(): Int {
-        if (listeArticles != null) {
-            return listeArticles.size
-        }
-        return 0
+        return listeArticles.size
     }
 
 }

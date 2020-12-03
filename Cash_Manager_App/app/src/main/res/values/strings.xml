@@ -10,4 +10,11 @@
     <string name="payement_card">Payement en carte</string>
     <string name="payement_cheque">Payement en cheque</string>
     <string name="prix_total">Prix total en € :</string>
+    <string name="actual_email">Actual email :</string>
+    <string name="modify_email">Modify email :</string>
+    <string name="new_email">new email</string>
+    <string name="actual_password">Actual password :</string>
+    <string name="modify_paswsord">Modify paswsord :</string>
+    <string name="new_password">new password</string>
+    <string name="modify">Modify</string>
 </resources>

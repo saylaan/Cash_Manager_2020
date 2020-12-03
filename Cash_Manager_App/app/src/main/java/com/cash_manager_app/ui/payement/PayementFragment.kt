@@ -30,7 +30,9 @@ class PayementFragment : Fragment() {
         })*/
 
         var prixTotal: TextView = root.findViewById(R.id.affichage_prix_total)
-        prixTotal.text = App_Data.instance?.gettotalPrice().toString()
+        prixTotal.text = String.format("%.2f", App_Data.instance.gettotalPrice())
+
+
 
         var buttonCard: Button = root.findViewById(R.id.payement_card)
         var buttonCheque: Button = root.findViewById(R.id.payement_cheque)

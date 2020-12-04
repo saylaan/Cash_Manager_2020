@@ -7,9 +7,11 @@
     <string name="password">Password</string>
     <string name="action_sign_in">Register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="payement_card">Payement en carte</string>
-    <string name="payement_cheque">Payement en cheque</string>
-    <string name="prix_total">Prix total en € :</string>
+    <string name="payement_card">Card payement</string>
+    <string name="payement_cheque">Cheque payement</string>
+    <string name="prix_total">Total price (€) :</string>
+    <string name="bienvenue">Bienvenue sur Cash Manager !</string>
+    <string name="identification">Veuillez vous identifier</string>
     <string name="actual_email">Actual email :</string>
     <string name="modify_email">Modify email :</string>
     <string name="new_email">new email</string>

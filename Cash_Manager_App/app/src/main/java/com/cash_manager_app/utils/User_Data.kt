@@ -8,6 +8,8 @@ class User_Data : Application() {
     lateinit var datas: TreeMap<String, String>
     lateinit var actualUseremail: String
     lateinit var actualUserpassword: String
+    lateinit var serverName : String
+    lateinit var serverPassword : String
 
     override fun onCreate() {
         super.onCreate()
@@ -43,6 +45,22 @@ class User_Data : Application() {
 
     fun getpassword(): String {
         return this.actualUserpassword
+    }
+
+    fun setserverName(name: String){
+        this.serverName = name
+    }
+
+    fun getserverName(): String {
+        return this.serverName
+    }
+
+    fun setserverPassword(password: String) {
+        this.serverPassword = password
+    }
+
+    fun getserverPassword(): String {
+        return this.serverPassword
     }
 
     companion object {

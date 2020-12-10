@@ -1,17 +1,14 @@
 package com.cash_manager_app.ui.home
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.cash_manager_app.MainActivity
 import com.cash_manager_app.R
 import com.cash_manager_app.utils.App_Data
-import com.cash_manager_app.utils.Article
-import com.cash_manager_app.utils.User_Data
+import com.cash_manager_app.models.Article
 
 class ArticlesAdapter
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -27,18 +24,18 @@ class ArticlesAdapter
 
         fun bind(article: Article, position: Int){
             name.text = article.article
-            prix.text = article.prix.toString()
+            prix.text = article.price.toString()
             article_count.text = App_Data.instance.getCount(position).toString()
             val clickListenerAjouter = View.OnClickListener {
                 //Ajouter un article et ajouter son prix au prix total
-                App_Data.instance.addTotalPrice(article.prix)
+                App_Data.instance.addTotalPrice(article.price)
                 App_Data.instance.addCount(position)
                 article_count.text = App_Data.instance.getCount(position).toString()
             }
             val clickListenerSupprimer = View.OnClickListener {
                 //Supprimer un article et soustraire son prix au prix total
                 if(App_Data.instance.getCount(position) > 0){
-                    App_Data.instance.minusTotalPrice(article.prix)
+                    App_Data.instance.minusTotalPrice(article.price)
                     App_Data.instance.minusCount(position)
                     article_count.text = App_Data.instance.getCount(position).toString()
                 }

@@ -19,4 +19,10 @@
     <string name="modify_paswsord">Modify paswsord :</string>
     <string name="new_password">new password</string>
     <string name="modify">Modify</string>
+    <string name="connect_to_server">Connect to server :</string>
+    <string name="server_name">Server name</string>
+    <string name="server_password">Server password</string>
+    <string name="connect">Connect</string>
+    <string name="connected_to_server">Connected to server :</string>
+    <string name="disconnect">disconnect</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.cash_manager_app.ui
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +9,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.cash_manager_app.MainActivity
 import com.cash_manager_app.R
-import com.cash_manager_app.utils.UserConstants
+import com.cash_manager_app.utils.Constants
 import com.cash_manager_app.utils.User_Data
 
 class Login : AppCompatActivity() {
@@ -47,7 +46,7 @@ class Login : AppCompatActivity() {
         val clickListenerSignin = View.OnClickListener {
             // Sign in
 
-            if((txtUsername.text.toString() == UserConstants().USEREMAIL)&&(txtPassword.text.toString() == UserConstants().USERPASSWORD)){
+            if((txtUsername.text.toString() == Constants().USEREMAIL)&&(txtPassword.text.toString() == Constants().USERPASSWORD)){
                 User_Data.instance.setemail(txtUsername.text.toString())
                 User_Data.instance.setpassword(txtPassword.text.toString())
                 val intent = Intent(applicationContext, MainActivity::class.java)

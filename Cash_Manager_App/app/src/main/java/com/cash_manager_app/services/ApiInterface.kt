@@ -19,12 +19,18 @@ interface ApiInterface {
     ) : Call<ServerResponse>
 
     @FormUrlEncoded
-    @POST("/payement")
+    @POST("/new-server-password")
+    fun modifyPassword(
+        @Field("password") password: String
+    ) : Call<ServerResponse>
+
+    @FormUrlEncoded
+    @POST("/payment")
     fun payement(
             @Field("username") username: String,
-            @Field("amount") amount: Int,
+            @Field("amount") amount: Double,
             @Field("BIC") bic: Int,
             @Field("number") number: Int
             //@Field("payementMethod") payementMethod: String
-    ) : Call<Payement>
+    ) : Call<ServerResponse>
 }

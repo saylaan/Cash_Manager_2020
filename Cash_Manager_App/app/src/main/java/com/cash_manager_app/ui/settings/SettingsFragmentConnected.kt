@@ -32,10 +32,11 @@ class SettingsFragmentConnected : Fragment() {
 
         val clickListenerDisconnect = View.OnClickListener {
             App_Data.instance.setisConnected(false)
-            val parent_fragment = childFragmentManager.beginTransaction()
+            startActivity(Intent(this))
+            /*val parent_fragment = childFragmentManager.beginTransaction()
             val new_fragment = SettingsFragment()
             parent_fragment.replace(R.id.container, new_fragment)
-            parent_fragment.commit()
+            parent_fragment.commit()*/
         }
 
         val clickListenerModify = View.OnClickListener {

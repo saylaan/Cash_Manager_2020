@@ -12,6 +12,7 @@ import com.cash_manager_app.R
 import com.cash_manager_app.models.Article
 import com.cash_manager_app.services.RetrofitClient
 import com.cash_manager_app.utils.App_Data
+import com.cash_manager_app.utils.ArticlesAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,6 +38,8 @@ class HomeFragment : Fragment() {
         val dataAdapter = ArticlesAdapter()
         viewArticles.adapter = dataAdapter
 /*
+        /** appel du GET pour recuperer la liste des articles vendus */
+
         val liste = RetrofitClient.instance.listeArticles()
 
         liste.enqueue(object : Callback<List<Article>> {

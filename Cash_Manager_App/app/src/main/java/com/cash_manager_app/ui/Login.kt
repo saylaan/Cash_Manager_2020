@@ -28,19 +28,13 @@ class Login : AppCompatActivity() {
         val clickListenerRegister = View.OnClickListener {
             // Register
 
-            if (User_Data.instance.isAlreadyExist(txtUsername.text.toString(),txtPassword.text.toString())){
+            User_Data.instance.setNewData(txtUsername.text.toString(),txtPassword.text.toString())
+            User_Data.instance.setemail(txtUsername.text.toString())
+            User_Data.instance.setpassword(txtPassword.text.toString())
 
-                User_Data.instance.setNewData(txtUsername.text.toString(),txtPassword.text.toString())
-                User_Data.instance.setemail(txtUsername.text.toString())
-                User_Data.instance.setpassword(txtPassword.text.toString())
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
 
-                val intent = Intent(applicationContext, MainActivity::class.java)
-                startActivity(intent)
-            }else{
-                val mAlertDialog = AlertDialog.Builder(applicationContext)
-                mAlertDialog.setMessage("Mauvais identifiants")
-                mAlertDialog.show()
-            }
         }
 
         val clickListenerSignin = View.OnClickListener {

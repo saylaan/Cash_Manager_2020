@@ -32,11 +32,23 @@
         android:id="@+id/password_server"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBaseline_toBaselineOf="@id/name_server"
+        app:layout_constraintTop_toBottomOf="@id/text_connected_server"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/name_server"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/new_password_server"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginStart="20dp"
         android:hint="@string/new_password"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toBottomOf="@id/name_server"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/modify_server_button"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/modify_server_button"
@@ -45,9 +57,9 @@
         android:text="@string/modify"
         android:textSize="12sp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="50dp"
-        app:layout_constraintBaseline_toBaselineOf="@id/password_server"
-        app:layout_constraintStart_toEndOf="@id/password_server"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/new_password_server"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_server"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -59,7 +71,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_server"/>
+        app:layout_constraintTop_toBottomOf="@id/new_password_server"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/actual_email"

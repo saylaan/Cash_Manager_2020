@@ -15,10 +15,6 @@ class App_Data : Application(){
         instance = this
     }
 
-    /*fun sizeListe(value: Int) {
-        count_per_article = Array(value){2}
-    }*/
-
     fun addCount(pos: Int) {
         count_per_article[pos] += 1
     }
@@ -53,8 +49,6 @@ class App_Data : Application(){
     fun setisConnected(value : Boolean) {
         this.isConnected = value
     }
-
-    //fun addArticle
 
     companion object {
 

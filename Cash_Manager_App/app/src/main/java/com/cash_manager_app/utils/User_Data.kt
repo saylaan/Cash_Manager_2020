@@ -6,6 +6,7 @@ import java.util.*
 class User_Data : Application() {
 
     lateinit var datas: TreeMap<String, String>
+
     lateinit var actualUseremail: String
     lateinit var actualUserpassword: String
     lateinit var serverName : String
@@ -13,7 +14,6 @@ class User_Data : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        //instance = this
     }
 
     fun isAlreadyExist(email: String, password: String) : Boolean {

@@ -1,4 +1,4 @@
-package com.cash_manager_app.ui.home
+package com.cash_manager_app.utils
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cash_manager_app.R
-import com.cash_manager_app.utils.App_Data
 import com.cash_manager_app.models.Article
 
 class ArticlesAdapter

@@ -13,9 +13,9 @@
         android:text="@string/connect_to_server"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toTopOf="@id/server_name"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -23,9 +23,9 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:hint="@string/server_name"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@id/connect_server_button"
+        app:layout_constraintTop_toBottomOf="@id/text_connect_server"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/server_password"/>
 
@@ -34,10 +34,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:hint="@string/server_password"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         app:layout_constraintBaseline_toBaselineOf="@id/server_name"
-        app:layout_constraintBottom_toTopOf="@id/connect_server_button"
+        app:layout_constraintTop_toBottomOf="@id/text_connect_server"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/server_name"/>
 
@@ -47,10 +47,10 @@
         android:layout_height="wrap_content"
         android:text="@string/connect"
         android:textSize="18sp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/actual_email"/>
+        app:layout_constraintTop_toBottomOf="@id/server_name"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/actual_email"
@@ -60,8 +60,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@id/affichage_actual_email"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/connect_server_button"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -69,10 +69,10 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:textSize="17sp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/modifier_email"/>
+        app:layout_constraintTop_toBottomOf="@id/actual_email"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/modifier_email"
@@ -82,8 +82,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@id/actual_password"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/affichage_actual_email"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -92,11 +92,11 @@
         android:layout_height="wrap_content"
         android:hint="@string/new_email"
         android:background="@android:color/transparent"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:singleLine="true"
         app:layout_constraintBaseline_toBaselineOf="@id/modifier_email"
-        app:layout_constraintBottom_toTopOf="@id/actual_password"
+        app:layout_constraintTop_toBottomOf="@id/affichage_actual_email"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -107,8 +107,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@id/affichage_actual_password"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/modifier_email"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -116,10 +116,10 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:textSize="17sp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/modifier_password"/>
+        app:layout_constraintTop_toBottomOf="@id/actual_password"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/modifier_password"
@@ -129,20 +129,20 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/modify_button"/>
+        app:layout_constraintTop_toBottomOf="@id/affichage_actual_password"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit_password"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:hint="@string/new_password"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@android:color/transparent"
         app:layout_constraintBaseline_toBaselineOf="@id/modifier_password"
-        app:layout_constraintBottom_toTopOf="@id/modify_button"
+        app:layout_constraintTop_toBottomOf="@id/affichage_actual_password"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -151,10 +151,10 @@
         android:layout_height="wrap_content"
         android:text="@string/modify"
         android:textSize="18sp"
-        android:layout_marginBottom="110dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/edit_password"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

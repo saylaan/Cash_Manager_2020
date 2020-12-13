@@ -1,5 +1,6 @@
 package com.cash_manager_app.ui.settings
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.cash_manager_app.MainActivity
 import com.cash_manager_app.R
 import com.cash_manager_app.utils.App_Data
 import com.cash_manager_app.utils.User_Data
@@ -32,7 +34,7 @@ class SettingsFragmentConnected : Fragment() {
 
         val clickListenerDisconnect = View.OnClickListener {
             App_Data.instance.setisConnected(false)
-            startActivity(Intent(this))
+            startActivity(Intent(this.context, MainActivity::class.java))
             /*val parent_fragment = childFragmentManager.beginTransaction()
             val new_fragment = SettingsFragment()
             parent_fragment.replace(R.id.container, new_fragment)

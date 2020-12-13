@@ -23,8 +23,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustResize"
             android:parentActivityName=".ui.Login" />
+        <activity
+            android:name=".MainActivityConnected"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".ui.payement.QrcodeScannerActivity"
             android:parentActivityName=".MainActivity"/>

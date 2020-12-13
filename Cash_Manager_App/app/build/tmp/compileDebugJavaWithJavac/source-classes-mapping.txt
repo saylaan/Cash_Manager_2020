@@ -1,0 +1,2 @@
+com/cash_manager_app/BuildConfig.java
+ com.cash_manager_app.BuildConfig

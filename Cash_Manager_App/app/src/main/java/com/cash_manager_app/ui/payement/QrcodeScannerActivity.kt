@@ -89,10 +89,10 @@ class QrcodeScannerActivity : AppCompatActivity() {
                 }
             }
         }
-/*
+
         qr_scanner.setOnClickListener {
             codeScanner.startPreview()
-        }*/
+        }
     }
 
     override fun onResume() {

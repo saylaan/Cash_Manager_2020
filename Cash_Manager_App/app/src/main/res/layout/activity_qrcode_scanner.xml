@@ -27,10 +27,12 @@
         android:textSize="20sp"
         android:textColor="@color/black"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="numero de compte"
+        android:background="@android:color/transparent"
         android:layout_below="@id/text_scan_qrcode"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"/>

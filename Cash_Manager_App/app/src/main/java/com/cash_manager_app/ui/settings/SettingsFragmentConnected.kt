@@ -2,6 +2,7 @@ package com.cash_manager_app.ui.settings
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,10 @@ class SettingsFragmentConnected : Fragment() {
         val serverPassword: TextView = root.findViewById(R.id.password_server)
         val password_server_modify : Button = root.findViewById(R.id.modify_server_button)
         val disconnectServer : Button = root.findViewById(R.id.disconnect_server_button)
+
+        Log.e("Main", "camera init error: ${User_Data.instance.getserverName()}")
+        serverName.text = User_Data.instance.getserverName()
+        serverPassword.text = User_Data.instance.getserverPassword()
 
         val clickListenerDisconnect = View.OnClickListener {
             App_Data.instance.setisConnected(false)
